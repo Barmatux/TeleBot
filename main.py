@@ -1,12 +1,13 @@
 import telebot
 import random
 import os
+import redis
 from Constants import SVYAT_FRAZES, MALOI_FRAZES, NAMES, TEXT
 
 
 token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
-
+r = redis.from_url(os.environ.get("REDIS_URL"))
 
 
 def read_photo():

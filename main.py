@@ -5,10 +5,6 @@ from Constants import SVYAT_FRAZES, MALOI_FRAZES, NAMES, TEXT
 bot = telebot.TeleBot('')
 
 
-# def get_stikers():
-#     return bot.get_sticker_set('new_lis')
-
-
 
 def read_photo():
     path = r'C:\Users\Win10Pro\Documents\photo'

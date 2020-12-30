@@ -1,8 +1,11 @@
 import telebot
 import random
+import os
 from bot.Constants import SVYAT_FRAZES, MALOI_FRAZES, NAMES, TEXT
 
-bot = telebot.TeleBot('1432193307:AAECkUzfBCtsBZnKrAfoxR5AuCH9SQwTK5I')
+
+token = os.environ['TELEGRAM_TOKEN']
+bot = telebot.TeleBot(token)
 
 
 

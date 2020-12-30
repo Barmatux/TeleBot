@@ -2,7 +2,8 @@ import telebot
 import random
 from Constants import SVYAT_FRAZES, MALOI_FRAZES, NAMES, TEXT
 
-bot = telebot.TeleBot('1432193307:AAECkUzfBCtsBZnKrAfoxR5AuCH9SQwTK5I')
+bot = telebot.TeleBot('')
+
 
 
 def read_photo():

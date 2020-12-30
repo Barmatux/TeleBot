@@ -1,7 +1,7 @@
 import telebot
 import random
 import os
-from bot.Constants import SVYAT_FRAZES, MALOI_FRAZES, NAMES, TEXT
+from Constants import SVYAT_FRAZES, MALOI_FRAZES, NAMES, TEXT
 
 
 token = os.environ['TELEGRAM_TOKEN']

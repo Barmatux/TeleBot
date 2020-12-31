@@ -22,6 +22,8 @@ def check_who(message):
         bot.send_message(message.chat.id, random.choice(SVYAT_FRAZES))
     if message.from_user.first_name == 'R.':
         bot.send_message(message.chat.id, random.choice(MALOI_FRAZES))
+    if int(message.from_user.id) == 240714315:
+        bot.send_message(message.chat.id, "А кто это у нас еще не родился? с натсупающим ДР!!")
     elif 'аркаша' in message.text.lower():
         talk_with_me(message)
 

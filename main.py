@@ -1,13 +1,11 @@
 import telebot
 import random
 import os
-import redis
 from Constants import SVYAT_FRAZES, MALOI_FRAZES, NAMES, TEXT
 
 
 token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
-r = redis.from_url(os.environ.get("REDIS_URL"))
 
 
 def read_photo():
@@ -20,14 +18,13 @@ def read_photo():
 @bot.message_handler(content_types=['text'])
 def check_who(message):
     print(f'{message.text} это сообщение от {message.from_user.first_name} - {message.from_user.id} ')
-    if message.from_user.id == 590521699:
+    if int(message.from_user.id) == 590521699:
         bot.send_message(message.chat.id, random.choice(SVYAT_FRAZES))
-    if message.from_user.id == 240714315:
+    if message.from_user.first_name == 'R.':
         bot.send_message(message.chat.id, random.choice(MALOI_FRAZES))
+    elif 'аркаша' in message.text.lower():
+        talk_with_me(message)
 
-@bot.message_handler(content_types=['text'], regexp='Аркаша')
-def get_text_message(message):
-    talk_with_me(message)
 
 @bot.message_handler(commands=['help'])
 def get_command_help(message):
